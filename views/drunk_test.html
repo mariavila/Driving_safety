@@ -1,0 +1,76 @@
+<!-- Comment!!-->
+<!DOCTYPE html>
+<html>
+  <style>
+    input[type=text] {
+      background-color: rgba(255,255,255,0.3);
+      color: black;
+
+      width: 60%;
+      margin: 0 auto;
+
+      border: 2px solid black;
+      border-radius: 4px;
+
+      font-size: 150%;
+    }
+
+    button {
+      background-color: rgba(31, 156, 178, 1);
+      border: none;
+      color: black;
+
+      width: 60%;
+      margin-top: 5%;
+      margin-bottom: 0%;
+
+      border: 2px solid black;
+      border-radius: 4px;
+
+      font-size: 150%;
+    }
+
+    p{
+      font-size: 200%;
+      font-weight: bold;;
+    }
+  </style>
+  <head>
+    <title>Safety driving</title>
+  </head>
+  <body background = "./imgs/background.jpg" background-repeat= "no-repeat" style="max-height : 100%; max-width : 100%;">
+    <center>
+      <div style = "background-color : rgba(255,255,255,0.1); margin-top : 20%; margin-right: 5%; margin-left:5%;">
+        <p>Please type the next text: <br> </p>
+        <p id="id_drunk"> hi3go<br> </p>
+        <input type="text" id="drunk_name"/><br>
+        <button onclick="submit_clicked()">Submit </button>
+        <p id="message" style="visibility: hidden;">You are too drunk to drive</p>
+      </div>
+  </center>
+  </body>
+  <script>
+    function makeid() {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+    }
+
+    id = makeid();
+    document.getElementById("id_drunk").innerHTML = id;
+
+    function submit_clicked(){
+      console.log(id);
+      console.log(document.getElementById("drunk_name").value);
+      if(document.getElementById("drunk_name").value==id){
+          window.location.href="ex.html";
+          console.log("You are not drunk");
+      }
+      else{
+        document.getElementById("message").style.visibility="visible";
+      }
+    }
+  </script>
+</html>
