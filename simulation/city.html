@@ -35,81 +35,10 @@
   	    ctx.fillRect(0, 0, 1200, 700);
   	    // Fondo de carrers
   	    var street_bg = new Image();
-		street_bg.src = "../views/imgs/mapa_sim_cityhack_streets.png";
+		street_bg.src = "../views/imgs/mapa3.jpg";
 		street_bg.onload = function() {
-			ctx.drawImage(street_bg, 0, 0);
-
-	  	    // Dibuixar edificis
-	  	    var x = 150;
-	  	    var y = 200;
-	  	    for (var i = 0; i < 15; i++)  {
-	  	    	var g = 0;
-	  	    	var b = 0;
-	  	    	if (i >= 12) b = 30;
-	  	    	for (var j = 0; j < 8; j++) {
-	  	    		if (j > 3) g = 20;
-	  	    		if (!((i == 0 && j == 0) || (i == 10 && j == 0) || (i == 11 && j == 0) || (i == 2 && j == 5) || (i == 7 && j == 1) || (i == 12 && j == 0) || (i == 8 && j == 4))) {
-				        ctx.fillStyle = "#F5D0A9";
-				        ctx.fillRect(x + i*55 + b, y + j*50 + g, 20, 20);
-				        ctx.beginPath();
-				        ctx.lineWidth="4";
-				        ctx.strokeStyle="#F7BE81";
-				        ctx.rect(x + i*55 + b, y + j*50 + g, 20, 20);
-				        ctx.stroke(); 
-	  	    		}
-	  	    		// Escoles
-	  	    		if ((i == 2 && j == 5) || (i == 7 && j == 1)) {
-	  				    ctx.fillStyle = "#FA5882";
-				        ctx.fillRect(x + i*55, y + j*50 + g, 20, 20);
-				        ctx.beginPath();
-				        ctx.lineWidth="4";
-				        ctx.strokeStyle="#FF0040";
-				        ctx.rect(x + i*55, y + j*50 + g, 20, 20);
-				        ctx.stroke();
-	  	    		}
-	  	    		// Parcs petits
-	  	    		if ((i == 8 && j == 4)) {
-				        ctx.beginPath();
-				        ctx.lineWidth="4";
-				        ctx.strokeStyle="#04B404";
-				        ctx.rect(x + i*55, y + j*50 + g, 20, 20);
-				        ctx.stroke();
-	  				    ctx.fillStyle = "#58FA58";
-				        ctx.fillRect(x + i*55, y + j*50 + g, 20, 20);
-	  	    		}
-	  	    	}
-	  	    	if (i < 10 && i > 1) {
-			    	ctx.fillStyle = "#F5D0A9";
-			        ctx.fillRect(x + i*55, 100, 20, 20);
-			        ctx.beginPath();
-			        ctx.lineWidth="4";
-			        ctx.strokeStyle="#F7BE81";
-			        ctx.rect(x + i*55, 100, 20, 20);
-			        ctx.stroke();
-	  	    	}
-	  	    }
-	  	    // Hospital
-			ctx.fillStyle = "#FA5882";
-	        ctx.fillRect(645, 420, 20, 70);
-	        ctx.beginPath();
-	        ctx.lineWidth="4";
-	        ctx.strokeStyle="#FF0040";
-	        ctx.rect(645, 420, 20, 70);
-	        ctx.stroke();
-	        // Parc gran
-	        ctx.beginPath();
-	        ctx.lineWidth="4";
-	        ctx.strokeStyle="#04B404";
-	        ctx.rect(425, 520, 75, 70);
-	        ctx.rect(315, 570, 350, 70);
-	        ctx.stroke();
-	        ctx.fillStyle = "#58FA58";
-	        ctx.fillRect(425, 520, 75, 70);
-	        ctx.fillRect(315, 570, 350, 70);
+			ctx.drawImage(street_bg, 0, 0, 1200, 700);
 		}
-		//var pattern = ctx.createPattern(streets_background, "no-repeat");
-		//ctx.fillStyle = pattern;
-		//ctx.fill();
   	}
   </script>
 
