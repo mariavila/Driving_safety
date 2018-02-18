@@ -1,3 +1,46 @@
 <!doctype html>
 <html>
+
+  <head>
+  	<!-- Titol princiapl de la pagina-->
+  	<title> Simulation for secure driving messages </title>
+  </head>
+
+  <style>
+    body {
+    	background-color: #CEECF5
+    }
+  </style>
+  <!-- Buttons dins de Style si calen-->
+  <body>
+  	<h1 style="color:black;text-align:center;font-family: Arial">Simulation for secure driving messages</h1>
+  	<div style="text-align:center">
+  	  <canvas id="screen" width=1200 height=700 style="border:1px solid #d3d3d3;"></canvas>
+  	</div>
+  </body>
+  <script type="text/javascript">
+  	var uo = document.getElementById("screen");
+  	var ctx = uo.getContext("2d");
+  	init();
+
+
+
+  	function init() {
+  		// document.getElementById("screen").Style.display = 'Block';
+  		// Alternativa: 'inline' si no volem que ocupi la totalitat de la pag
+  		// document.getElementById("name_form").style.display = 'none';
+        ctx.clearRect(0, 0, uo.width, uo.height);
+        // Fondo blanc
+      	ctx.fillStyle = "#FFFFFF";
+  	    ctx.fillRect(0, 0, 1200, 700);
+  	    // Fondo de carrers
+  	    var street_bg = new Image();
+		street_bg.src = "../views/imgs/mapa3.jpg";
+		street_bg.onload = function() {
+			ctx.drawImage(street_bg, 0, 0, 1200, 700);
+		}
+  	}
+  </script>
+
+
 </html>
