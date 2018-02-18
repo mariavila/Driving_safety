@@ -6,24 +6,25 @@ document.onkeydown = function(event) {
 		39: 'right'
 	}
 	// console.log(event.keyCode) // print the key code
+	//if (!car[4]) {
+		car[1].x = 0
+		car[1].y = 0
 
-	car[1].x = 0
-	car[1].y = 0
-
-	switch (keys[event.keyCode]) {
-		case 'left':
-			car[1].x = -1
-			break
-		case 'right':
-			car[1].x = 1
-			break
-		case 'up':
-			car[1].y = -1
-			break
-		case 'down':
-			car[1].y = 1
-			break
-		default:
-			return
-	}
+		switch (keys[event.keyCode]) {
+			case 'left':
+				car[1].x = -1
+				break
+			case 'right':
+				car[1].x = 1
+				break
+			case 'up':
+				car[1].y = -1
+				break
+			case 'down':
+				car[1].y = 1
+				break
+			default:
+				return
+		}
+	//}
 }
