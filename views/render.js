@@ -84,12 +84,15 @@ function outside() {
 	if (color_diff(hex_place, 'dcdddd') < 230)
 		if (color_diff(hex_place, 'fdfdfd') > 230) {
 			console.log("You are out of the road!")
+      var sound = document.getElementById("sound_out_road");
+      sound.play();
 		}
 		else {
 			console.log("CRASH")
 			exploding = true
-			setInterval(draw, 10)
+			setInterval(draw, 3)
 			car[3] = false
+      //window.location.href=".html";
 		}
 
 }
@@ -101,6 +104,8 @@ function in_risk() {
 		if (!WC) {
 			console.log("You are aproaching a dangerous crossroad!")
 			WC = true
+      var sound = document.getElementById("sound_dangerous");
+      sound.play();
 		}
 	}
 	else WC = false
@@ -108,6 +113,8 @@ function in_risk() {
 		if (!WH) {
 			console.log("Careful, a you are passing near a hospital!")
 			WH = true
+      var sound = document.getElementById("sound_hospital");
+      sound.play();
 		}
 	}
 	else WH = false
@@ -116,6 +123,8 @@ function in_risk() {
 		if (!WE) {
 			console.log("Slow down, a school is close.")
 			WE = true
+      var sound = document.getElementById("sound_school");
+      sound.play();
 		}
 	}
 	else WE = false
@@ -124,6 +133,8 @@ function in_risk() {
 		if (!WP) {
 			console.log("Slow down, a parc is close.")
 			WP = true
+      var sound = document.getElementById("sound_park");
+      sound.play();
 		}
 	}
 	else WP = false
