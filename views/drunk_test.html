@@ -34,6 +34,12 @@
       font-size: 200%;
       font-weight: bold;
     }
+    body{
+      background-image:url(./imgs/background2.bmp);
+      background-repeat: no-repeat;
+      max-height : 100%;
+      max-width : 100%;
+    }
   </style>
   <head>
     <title>Safety driving</title>
@@ -41,16 +47,16 @@
   <audio id="sound">
     <source src = "./audios/youaretoodrunktodrive.mp3" type = "audio/mpeg">
   </audio>
-  <body background = "./imgs/background.jpg" background-repeat= "no-repeat" style="max-height : 100%; max-width : 100%;">
+  <body>
     <center>
-      <div style = "background-color : rgba(255,255,255,0.1); margin-top : 20%; margin-right: 5%; margin-left:5%;">
+      <div style = "background-color : rgba(0,0,0,0.2); margin-top : 20%; margin-right: 5%; margin-left:5%;">
         <p>Please type the next text: <br> </p>
         <p id="id_drunk"> hi3go<br> </p>
         <input type="text" id="drunk_name"/><br>
         <button onclick="submit_clicked()">Submit </button>
         <p id="message" style="visibility: hidden;">You are too drunk to drive</p>
       </div>
-  </center>
+    </center>
   </body>
   <script>
     function makeid() {
@@ -68,13 +74,13 @@
       console.log(id);
       console.log(document.getElementById("drunk_name").value);
       if(document.getElementById("drunk_name").value==id){
-          window.location.href="ex.html";
+          window.location.href="car.html";
           console.log("You are not drunk");
       }
       else{
         document.getElementById("message").style.visibility="visible";
         var sound = document.getElementById("sound");
-        sound.play(); 
+        sound.play();
       }
     }
   </script>

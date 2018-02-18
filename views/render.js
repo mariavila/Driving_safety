@@ -88,8 +88,9 @@ function outside() {
 		else {
 			console.log("CRASH")
 			exploding = true
-			setInterval(draw, 10)
+			setInterval(draw, 3)
 			car[3] = false
+      //window.location.href=".html";
 		}
 
 }
@@ -108,6 +109,8 @@ function in_risk() {
 		if (!WH) {
 			console.log("Careful, a you are passing near a hospital!")
 			WH = true
+      var sound = document.getElementById("sound_hospital");
+      sound.play();
 		}
 	}
 	else WH = false
@@ -116,6 +119,8 @@ function in_risk() {
 		if (!WE) {
 			console.log("Slow down, a school is close.")
 			WE = true
+      var sound = document.getElementById("sound_school");
+      sound.play();
 		}
 	}
 	else WE = false
