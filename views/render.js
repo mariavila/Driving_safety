@@ -189,7 +189,7 @@ function render() {
 	if (!exploding) {
 		ctx.clearRect(0, 0, uo.width, uo.height)
 	//street_bg.onload = function() {
-	    ctx.drawImage(street_bg, 0, 0, 1200, 700)
+	    ctx.drawImage(street_bg, 60, 0, 1080, 630)
 	}
 	//}
 	renderCar()
