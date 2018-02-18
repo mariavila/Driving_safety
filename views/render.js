@@ -147,27 +147,29 @@ function abs(n) {
 }
 
 function in_rondabout() {
-	var x = car[0].x
-	var y = car[0].y
-	//ctx.fillRect(740, 110, 120,110)
-	var y_elipse = Math.sqrt(65*65 - 65*65/100/100 * (x - 850)*(x - 850)) + 110
-	if (abs(y - 110) < abs(y_elipse - 110) +2 && y >= 110) {
-		// Center Elispe: (850, 110)
-		car[1].x = 0
-		car[1].y = 0
-		car[0].x = car[0].x + 1
-		car[0].y = Math.sqrt(65*65 - 65*65/100/100 * (x +1 - 850)*(x +1 - 850)) + 110
-		//car[4] = true
+	if (!car[5] || x < 700 || y > 300) {
+		var x = car[0].x
+		var y = car[0].y
+		//ctx.fillRect(740, 110, 120,110)
+		var y_elipse = Math.sqrt(65*65 - 65*65/100/100 * (x - 850)*(x - 850)) + 110
+		if (abs(y - 110) < abs(y_elipse - 110) +2 && (y > 110 || (y == 110 && x < 810))) {
+			// Center Elispe: (850, 110)
+			car[1].x = 0
+			car[1].y = 0
+			car[0].x = car[0].x + 1
+			car[0].y = Math.sqrt(65*65 - 65*65/100/100 * (x +1 - 850)*(x +1 - 850)) + 110
+			car[4] = true
+		}
+		if (abs(y - 110) < abs(y_elipse - 110) +2 && (y < 110 || (y == 110 && x > 810))) {
+			// Center Elispe: (850, 110)
+			car[1].x = 0
+			car[1].y = 0
+			car[0].x = car[0].x - 1
+			car[0].y = - Math.sqrt(65*65 - 65*65/100/100 * (x -1 - 850)*(x -1 - 850)) + 110
+			car[4] = true
+		}
+		//else car[4] = false
 	}
-	if (abs(y - 110) < abs(y_elipse - 110) +2 && y <= 110) {
-		// Center Elispe: (850, 110)
-		car[1].x = 0
-		car[1].y = 0
-		car[0].x = car[0].x - 1
-		car[0].y = - Math.sqrt(65*65 - 65*65/100/100 * (x -1 - 850)*(x -1 - 850)) + 110
-		//car[4] = true
-	}
-	//else car[4] = false
 }
 
 function renderCar() {
