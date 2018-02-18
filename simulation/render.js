@@ -130,19 +130,40 @@ function in_risk() {
 		
 }
 
+function in_rondabout() {
+	var x = car[0].x
+	var y = car[0].y
+	if (740 < x && x < 940 && 40 < y && y < 170)
+		// Center Elispe: (850, 110)
+		angle = Math.cos((810 - x)/(110 - y))
+		car[1].x = 
+		car[1].y = 
+		car[4] = true
+}
+	//ctx.beginPath()
+	//ctx.ellipse(850, 110, 110, 70, 0, 0, Math.PI*2)
+	//ctx.stroke()
+
 function renderCar() {
 	if (car[3]) {
 		outside()
 		in_risk()
 		ctx.fillStyle = "#000000"
 		ctx.fillRect(car[0].x, car[0].y, 8, 8)
+		//in_rondabout()
 	}
 }
 
 function render() {
-	ctx.clearRect(0, 0, uo.width, uo.height)
+	if (!exploding) {
+		ctx.clearRect(0, 0, uo.width, uo.height)
 	//street_bg.onload = function() {
-	ctx.drawImage(street_bg, 0, 0, 1200, 700)
+	    ctx.drawImage(street_bg, 0, 0, 1200, 700)
+	}
+	ctx.beginPath()
+	ctx.fillStyle = "#E0E0E0"
+	ctx.ellipse(855, 110, 100, 70, 0, 0, Math.PI*2)
+	ctx.stroke()
 	//}
 	renderCar()
 	setTimeout(render, 20)
