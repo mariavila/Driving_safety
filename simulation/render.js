@@ -20,6 +20,12 @@ var boom = new Image()
 boom.src = "../views/imgs/explosion.png"
 var exploding = false;
 
+// Warrnings for crossroads, schools, hospitals and parcs
+WC = false
+WS = false
+WH = false
+WP = false
+
 function rgbToHex(r, g, b) {
     if (r > 255 || g > 255 || b > 255)
         throw "Invalid color component";
@@ -62,10 +68,8 @@ function updateFrame() {
 function draw() {
 	if (exploding) {
 		updateFrame();
-		//ctx.clearRect(0, 0, uo.width, uo.height);
-		//ctx.drawImage(street_bg, 0, 0, 1200, 700)
-		console.log(srcX);
-		console.log(srcY);
+		//console.log(srcX);
+		//console.log(srcY);
 		ctx.drawImage(boom, srcX*256, srcY*256, width, height, car[0].x - 64, car[0].y - 64, 100, 100);
 	}
 }
@@ -90,9 +94,46 @@ function outside() {
 
 }
 
+function in_risk() {
+	var x = car[0].x
+	var y = car[0].y
+	if (800 < x && x < 970 && 300 < y && y < 470) {
+		if (!WC) {
+			console.log("You are aproaching a dangerous crossroad!")
+			WC = true
+		}
+	}
+	else WC = false
+	if (605 < x && x < 775 && 360 < y && y < 530) {
+		if (!WH) {
+			console.log("Careful, a you are passing near a hospital!")
+			WH = true
+		}
+	}
+	else WH = false
+	if ((520 < x && x < 620 && 180 < y && y < 280) ||
+		(190 < x && x < 290 && 445 < y && y < 545)) {
+		if (!WE) {
+			console.log("Slow down, a school is close.")
+			WE = true
+		}
+	}
+	else WE = false
+	if ((250 < x && x < 780 && 550 < y && y < 700) ||
+		(380 < x && x < 560 && 490 < y)) {
+		if (!WP) {
+			console.log("Slow down, a parc is close.")
+			WP = true
+		}
+	}
+	else WP = false
+		
+}
+
 function renderCar() {
 	if (car[3]) {
 		outside()
+		in_risk()
 		ctx.fillStyle = "#000000"
 		ctx.fillRect(car[0].x, car[0].y, 8, 8)
 	}
