@@ -1,8 +1,8 @@
-// Initial values: pos:{x:200, y:100}, v:{0,1}, a:{0,0}, playing, in_roundabout, exit_roundabout
+// Initial values: pos:{x:200, y:100}, v:{1,0}, a:{0,0}, playing, in_roundabout, exit_roundabout
 var car = []
 
 function init() {
-	car = [{x:200, y:100}, {x:0, y:1}, {x:0, y:0}, true, false, false]
+	car = [{x:200, y:100}, {x:1, y:0}, {x:0, y:0}, true, false, false]
 }
 
 
