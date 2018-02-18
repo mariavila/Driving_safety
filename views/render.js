@@ -3,7 +3,7 @@ var ctx = uo.getContext("2d")
 
 // Mapa de la simulacio
 var street_bg = new Image()
-street_bg.src = "../views/imgs/mapa3.jpg"
+street_bg.src = "./imgs/mapa3.jpg"
 
 // Dibujar explosion, parte correspondiente
 var spriteWidth=2048;
@@ -17,7 +17,7 @@ var srcY = 0;
 
 // Explosion
 var boom = new Image()
-boom.src = "../views/imgs/explosion.png"
+boom.src = "./imgs/explosion.png"
 var exploding = false;
 
 // Warrnings for crossroads, schools, hospitals and parcs
@@ -60,8 +60,8 @@ function updateFrame() {
 		srcY++;
 		if (srcY == rows) {
 			srcY = 0;
-			exploding = false;		
-		}				
+			exploding = false;
+		}
 	}
 }
 
@@ -127,7 +127,7 @@ function in_risk() {
 		}
 	}
 	else WP = false
-		
+
 }
 
 function in_rondabout() {
