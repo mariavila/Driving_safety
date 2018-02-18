@@ -181,7 +181,7 @@ function renderCar() {
 		in_risk()
 		in_rondabout()
 		ctx.fillStyle = "#000000"
-		ctx.fillRect(car[0].x, car[0].y, 8, 8)
+		ctx.fillRect(car[0].x, car[0].y, 10, 10)
 	}
 }
 
