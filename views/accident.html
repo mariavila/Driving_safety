@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    p{
+      font-size: 200%;
+      font-weight: bold;
+    }
+
+    button {
+      border: none;
+      color: black;
+
+      width: 60%;
+      margin-top: 5%;
+      margin-bottom: 0%;
+
+      border: 2px solid black;
+      border-radius: 4px;
+
+      font-size: 200%;
+    }
+
+  </style>
+  <head>
+    <title>Safety driving</title>
+  </head>
+  <body background = "./imgs/background.jpg" background-repeat= "no-repeat" style="max-height : 100%; max-width : 100%;">
+    <center>
+      <div style = "background-color : rgba(255,255,255,0.1); margin-top : 15%; margin-right: 5%; margin-left:5%;">
+        <p><br></p>
+        <p id="message">Can you move? <br> </p>
+        <button id = "yes_btn"onclick="yes_clicked()" style="background-color: rgba(0, 255, 0, 1);">Yes </button>
+        <button id = "no_btn" onclick="no_clicked()" style="background-color: rgba(255, 0, 0, 1);">No </button>
+        <p><br></p>
+      </div>
+    </center>
+  </body>
+  <script>
+    function yes_clicked(){
+      document.getElementById("yes_btn").style.display="None";
+      document.getElementById("no_btn").style.display="None";
+      document.getElementById("message").innerHTML = "Please get out of the car as quick as possible. We are calling the emergency services.";
+    }
+    function no_clicked(){
+      document.getElementById("yes_btn").style.display="None";
+      document.getElementById("no_btn").style.display="None";
+      document.getElementById("message").innerHTML = "Please don't make any abrupt movements. We are calling the emergency services.";
+    }
+    setTimeout(no_clicked, 7000);
+  </script>
+</html>
