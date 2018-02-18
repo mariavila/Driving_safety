@@ -141,19 +141,51 @@ function in_risk() {
 
 }
 
+function abs(n) {
+	if (n >= 0) return n
+	else return -n
+}
+
+function in_rondabout() {
+	var x = car[0].x
+	var y = car[0].y
+	//ctx.fillRect(740, 110, 120,110)
+	var y_elipse = Math.sqrt(65*65 - 65*65/100/100 * (x - 850)*(x - 850)) + 110
+	if (abs(y - 110) < abs(y_elipse - 110) +2 && y >= 110) {
+		// Center Elispe: (850, 110)
+		car[1].x = 0
+		car[1].y = 0
+		car[0].x = car[0].x + 1
+		car[0].y = Math.sqrt(65*65 - 65*65/100/100 * (x +1 - 850)*(x +1 - 850)) + 110
+		//car[4] = true
+	}
+	if (abs(y - 110) < abs(y_elipse - 110) +2 && y <= 110) {
+		// Center Elispe: (850, 110)
+		car[1].x = 0
+		car[1].y = 0
+		car[0].x = car[0].x - 1
+		car[0].y = - Math.sqrt(65*65 - 65*65/100/100 * (x -1 - 850)*(x -1 - 850)) + 110
+		//car[4] = true
+	}
+	//else car[4] = false
+}
+
 function renderCar() {
 	if (car[3]) {
 		outside()
 		in_risk()
+		in_rondabout()
 		ctx.fillStyle = "#000000"
 		ctx.fillRect(car[0].x, car[0].y, 8, 8)
 	}
 }
 
 function render() {
-	ctx.clearRect(0, 0, uo.width, uo.height)
+	if (!exploding) {
+		ctx.clearRect(0, 0, uo.width, uo.height)
 	//street_bg.onload = function() {
-	ctx.drawImage(street_bg, 0, 0, 1200, 700)
+	    ctx.drawImage(street_bg, 0, 0, 1200, 700)
+	}
 	//}
 	renderCar()
 	setTimeout(render, 20)
