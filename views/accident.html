@@ -29,6 +29,15 @@
   <head>
     <title>Safety driving</title>
   </head>
+  <audio id="sound_move">
+    <source src = "./audios/canyoumove.mp3" type = "audio/mpeg">
+  </audio>
+  <audio id="sound_no">
+    <source src = "./audios/Pleasedon'tmakeanyabruptmovements .mp3" type = "audio/mpeg">
+  </audio>
+  <audio id="sound_yes">
+    <source src = "./audios/pleasegetoutofthecarasfastaspossible.mp3" type = "audio/mpeg">
+  </audio>
   <body>
     <center>
       <div style = "background-color : rgba(0,0,0,0.2); margin-top : 15%; margin-right: 5%; margin-left:5%;">
@@ -41,7 +50,11 @@
     </center>
   </body>
   <script>
+    var sound = document.getElementById("sound_move");
+    sound.play();
     function yes_clicked(){
+      var sound = document.getElementById("sound_yes");
+      sound.play();
       document.getElementById("yes_btn").style.display="None";
       document.getElementById("no_btn").style.display="None";
       document.getElementById("message").innerHTML = "Please get out of the car as quick as possible. We are calling the emergency services.";
@@ -49,6 +62,8 @@
     }
     function no_clicked(){
       if(!yesClicked){
+        var sound = document.getElementById("sound_no");
+        sound.play();
         document.getElementById("yes_btn").style.display="None";
         document.getElementById("no_btn").style.display="None";
         document.getElementById("message").innerHTML = "Please don't make any abrupt movements. We are calling the emergency services.";

@@ -72,6 +72,9 @@ function draw() {
 		//console.log(srcY);
 		ctx.drawImage(boom, srcX*256, srcY*256, width, height, car[0].x - 64, car[0].y - 64, 100, 100);
 	}
+  else{
+    window.location.href="accident.html";
+  }
 }
 
 function outside() {
