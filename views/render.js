@@ -103,7 +103,7 @@ function outside() {
 function in_risk() {
 	var x = car[0].x
 	var y = car[0].y
-	if (800 < x && x < 970 && 300 < y && y < 470) {
+	if (700 < x && x < 900 && 270 < y && y < 460) {
 		if (!WC) {
 			console.log("You are aproaching a dangerous crossroad!")
 			WC = true
@@ -112,7 +112,7 @@ function in_risk() {
 		}
 	}
 	else WC = false
-	if (605 < x && x < 775 && 360 < y && y < 530) {
+	if (525 < x && x < 695 && 310 < y && y < 480) {
 		if (!WH) {
 			console.log("Careful, a you are passing near a hospital!")
 			WH = true
@@ -121,8 +121,8 @@ function in_risk() {
 		}
 	}
 	else WH = false
-	if ((520 < x && x < 620 && 180 < y && y < 280) ||
-		(190 < x && x < 290 && 445 < y && y < 545)) {
+	if ((450 < x && x < 560 && 145 < y && y < 255) ||
+		(170 < x && x < 270 && 375 < y && y < 480)) {
 		if (!WE) {
 			console.log("Slow down, a school is close.")
 			WE = true
@@ -131,13 +131,13 @@ function in_risk() {
 		}
 	}
 	else WE = false
-	if ((250 < x && x < 780 && 550 < y && y < 700) ||
-		(380 < x && x < 560 && 490 < y)) {
+	if ((200 < x && x < 710 && 500 < y && y < 680) ||
+		(340 < x && x < 520 && 440 < y)) {
 		if (!WP) {
 			console.log("Slow down, a parc is close.")
 			WP = true
-      var sound = document.getElementById("sound_park");
-      sound.play();
+	      var sound = document.getElementById("sound_park");
+	      sound.play();
 		}
 	}
 	else WP = false
